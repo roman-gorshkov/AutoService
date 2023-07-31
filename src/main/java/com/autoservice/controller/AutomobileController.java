@@ -29,8 +29,8 @@ public class AutomobileController {
     }
 
     @PutMapping()
-    public Automobile update(@RequestBody Automobile automobile){
-        return automobileService.update(automobile);
+    public void update(@RequestBody Automobile automobile){
+        automobileService.save(automobile);
     }
 
     @GetMapping()

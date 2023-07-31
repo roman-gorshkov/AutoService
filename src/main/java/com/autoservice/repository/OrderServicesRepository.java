@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderServicesRepository extends JpaRepository <OrderServices,Long> {
     OrderServices getById(Long id);
-
-    OrderServices update(OrderServices orderServices);
 }

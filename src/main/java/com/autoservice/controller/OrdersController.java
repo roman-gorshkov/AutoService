@@ -16,22 +16,23 @@ public class OrdersController {
         this.ordersService = ordersService;
     }
 
-    @RequestMapping("/save")
+    @PostMapping
     public void save(@RequestBody Orders orders){
         ordersService.save(orders);
     }
 
-    @RequestMapping("/delete")
-    public void delete(@RequestBody Orders orders){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        Orders orders = ordersService.getById(id);
         ordersService.delete(orders);
     }
 
-    @RequestMapping("/update")
-    public Orders update(@RequestBody Orders orders){
-        return ordersService.update(orders);
+    @PutMapping
+    public void update(@RequestBody Orders orders){
+        ordersService.save(orders);
     }
 
-    @GetMapping("/getById")
+    @GetMapping
     public Orders getById(@RequestParam("id") Long id){
         return ordersService.getById(id);
     }

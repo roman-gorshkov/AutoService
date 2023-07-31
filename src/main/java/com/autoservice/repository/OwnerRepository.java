@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OwnerRepository extends JpaRepository<Owner,Long> {
-    Owner getByNumberOfPhone(String numberOfPhone);
+    Owner getById(Long id);
 
-    Owner update(Owner owner);
+    Owner getByNumberOfPhone(String numberOfPhone);
 }

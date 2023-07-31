@@ -23,10 +23,6 @@ public class TypeOfWorkService {
         typeOfWorkRepository.delete(typeOfWork);
     }
 
-    public TypeOfWork update(TypeOfWork typeOfWork){
-        return typeOfWorkRepository.update(typeOfWork);
-    }
-
     public TypeOfWork getById(Long id){
         return typeOfWorkRepository.getById(id);
     }

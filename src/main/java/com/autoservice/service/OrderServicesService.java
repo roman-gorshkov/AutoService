@@ -22,10 +22,6 @@ public class OrderServicesService {
         orderServicesRepository.delete(orderServices);
     }
 
-    public OrderServices update(OrderServices orderServices){
-        return orderServicesRepository.update(orderServices);
-    }
-
     public OrderServices getById(Long id){
         return orderServicesRepository.getById(id);
     }

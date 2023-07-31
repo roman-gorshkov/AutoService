@@ -23,8 +23,8 @@ public class OwnerService {
         ownerRepository.delete(owner);
     }
 
-    public Owner update(Owner owner){
-        return ownerRepository.update(owner);
+    public Owner getById(Long id){
+        return ownerRepository.getById(id);
     }
 
     public Owner getByNumberOfPhone(String numberOfPhone){

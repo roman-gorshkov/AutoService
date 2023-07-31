@@ -22,10 +22,6 @@ public class NewSparePartsService {
         newSparePartsRepository.save(newSpareParts);
     }
 
-    public NewSpareParts update(NewSpareParts newSpareParts){
-        return newSparePartsRepository.update(newSpareParts);
-    }
-
     public NewSpareParts getById(Long id){
         return newSparePartsRepository.getById(id);
     }

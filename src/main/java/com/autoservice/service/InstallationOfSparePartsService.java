@@ -21,10 +21,6 @@ public class InstallationOfSparePartsService {
         installationOfSparePartsRepository.delete(installationOfSpareParts);
     }
 
-    public InstallationOfSpareParts update(InstallationOfSpareParts installationOfSpareParts){
-        return installationOfSparePartsRepository.update(installationOfSpareParts);
-    }
-
     public InstallationOfSpareParts getById(Long id){
         return installationOfSparePartsRepository.getById(id);
     }

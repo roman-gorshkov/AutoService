@@ -2,7 +2,6 @@ package com.autoservice.service;
 
 import com.autoservice.model.Orders;
 import com.autoservice.repository.OrdersRepository;
-import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +21,6 @@ public class OrdersService {
 
     public void delete(Orders orders){
         ordersRepository.delete(orders);
-    }
-
-    public Orders update(Orders orders){
-        return ordersRepository.update(orders);
     }
 
     public Orders getById(Long id){

@@ -9,5 +9,4 @@ public interface AutomobileRepository extends JpaRepository<Automobile,Long> {
     Automobile getById(Long id);
     Automobile getByLicensePlate(String licensePlate);
     Automobile getByVINNumber(String VINNumber);
-    Automobile saveOrUpdate(Automobile automobile);
 }

@@ -15,28 +15,29 @@ public class ExecutorController {
         this.executorService = executorService;
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public void save(@RequestBody Executor executor){
         executorService.save(executor);
     }
 
-    @PostMapping("/delete")
-    public void delete(@RequestBody Executor executor){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        Executor executor = executorService.getById(id);
         executorService.delete(executor);
     }
 
-    @PostMapping("/update")
-    public Executor update(@RequestBody Executor executor){
-        return executorService.update(executor);
+    @PutMapping
+    public void update(@RequestBody Executor executor){
+        executorService.save(executor);
     }
 
-    @GetMapping("/getById")
+    @GetMapping
     public Executor getById(@RequestParam("id") Long id){
         return executorService.getById(id);
     }
 
     @GetMapping("/getByJobTitle")
-    public Executor getByJobTitle(@RequestParam("getByJobTitle") String jobTitle){
+    public Executor getByJobTitle(@RequestParam("jobTitle") String jobTitle){
         return executorService.getByJobTitle(jobTitle);
     }
 }

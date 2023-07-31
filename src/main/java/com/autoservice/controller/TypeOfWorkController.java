@@ -16,22 +16,23 @@ public class TypeOfWorkController {
         this.typeOfWorkService = typeOfWorkService;
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public void save(@RequestBody TypeOfWork typeOfWork){
         typeOfWorkService.save(typeOfWork);
     }
 
-    @PostMapping("/delete")
-    public void delete(@RequestBody TypeOfWork typeOfWork){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        TypeOfWork typeOfWork = typeOfWorkService.getById(id);
         typeOfWorkService.delete(typeOfWork);
     }
 
-    @PostMapping("/update")
-    public TypeOfWork update(@RequestBody TypeOfWork typeOfWork){
-        return typeOfWorkService.update(typeOfWork);
+    @PutMapping
+    public void update(@RequestBody TypeOfWork typeOfWork){
+        typeOfWorkService.save(typeOfWork);
     }
 
-    @GetMapping("/getById")
+    @GetMapping
     public TypeOfWork getById(@RequestParam("id") Long id){
         return typeOfWorkService.getById(id);
     }

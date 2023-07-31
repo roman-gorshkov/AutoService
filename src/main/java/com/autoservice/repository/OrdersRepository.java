@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface OrdersRepository extends JpaRepository <Orders,Long> {
     Orders getById(Long id);
 
-    Orders update(Orders orders);
-
 }

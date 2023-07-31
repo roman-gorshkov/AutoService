@@ -16,22 +16,23 @@ public class InstallationOfSparePartsController {
         this.installationOfSparePartsService = installationOfSparePartsService;
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public void save(@RequestBody InstallationOfSpareParts installationOfSpareParts){
         installationOfSparePartsService.save(installationOfSpareParts);
     }
 
-    @PostMapping("/delete")
-    public void delete(@RequestBody InstallationOfSpareParts installationOfSpareParts){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        InstallationOfSpareParts installationOfSpareParts = installationOfSparePartsService.getById(id);
         installationOfSparePartsService.delete(installationOfSpareParts);
     }
 
-    @PostMapping("/update")
-    public InstallationOfSpareParts update(@RequestBody InstallationOfSpareParts installationOfSpareParts){
-        return installationOfSparePartsService.update(installationOfSpareParts);
+    @PutMapping
+    public void update(@RequestBody InstallationOfSpareParts installationOfSpareParts){
+        installationOfSparePartsService.save(installationOfSpareParts);
     }
 
-    @GetMapping("/getById")
+    @GetMapping
     public InstallationOfSpareParts getById(@RequestParam("id") Long id){
         return installationOfSparePartsService.getById(id);
     }

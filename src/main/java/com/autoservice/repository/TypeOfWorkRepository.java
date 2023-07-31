@@ -9,5 +9,4 @@ public interface TypeOfWorkRepository extends JpaRepository <TypeOfWork,Long> {
     TypeOfWork getById(Long id);
     TypeOfWork getByWorkType(String workType);
     TypeOfWork getByDeadLine(String deadLine);
-    TypeOfWork update(TypeOfWork typeOfWork);
 }

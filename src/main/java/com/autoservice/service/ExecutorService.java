@@ -22,10 +22,6 @@ public class ExecutorService {
         executorRepository.delete(executor);
     }
 
-    public Executor update(Executor executor){
-        return executorRepository.update(executor);
-    }
-
     public Executor getById(Long id){
         return executorRepository.getById(id);
     }

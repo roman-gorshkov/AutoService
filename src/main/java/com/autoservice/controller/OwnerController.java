@@ -16,23 +16,28 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping("/save")
+    @PostMapping
     public void save(@RequestBody Owner owner){
         ownerService.save(owner);
     }
 
-    @RequestMapping("/delete")
-    public void delete(@RequestBody Owner owner){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        Owner owner = ownerService.getById(id);
         ownerService.delete(owner);
     }
 
-    @RequestMapping("/update")
-    public Owner update(@RequestBody Owner owner){
-        return ownerService.update(owner);
+    @PutMapping
+    public void update(@RequestBody Owner owner){
+        ownerService.save(owner);
     }
 
+    @GetMapping
+    public Owner getById(@RequestParam("id") Long id) {
+        return ownerService.getById(id);
+    }
     @GetMapping("/getByNumberOfPhone")
-    public Owner getByNumberOfPhone(@RequestParam String numberOfPhone){
+    public Owner getByNumberOfPhone(@RequestParam("numberOfPhone") String numberOfPhone){
         return ownerService.getByNumberOfPhone(numberOfPhone);
     }
 }

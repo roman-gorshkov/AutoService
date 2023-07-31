@@ -22,9 +22,6 @@ public class AutomobileService {
         automobileRepository.delete(automobile);
     }
 
-    public Automobile update(Automobile automobile){
-        return automobileRepository.saveOrUpdate(automobile);
-    }
     public Automobile getById(Long id){
         return automobileRepository.getById(id);
     }

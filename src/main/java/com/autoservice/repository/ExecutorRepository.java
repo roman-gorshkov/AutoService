@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface ExecutorRepository extends JpaRepository <Executor,Long> {
     Executor getById(Long id);
     Executor getByJobTitle(String jobTitle);
-    Executor update(Executor executor);
 }

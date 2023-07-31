@@ -16,22 +16,23 @@ public class NewSparePartsController {
         this.newSparePartsService = newSparePartsService;
     }
 
-    @RequestMapping("/save")
+    @PostMapping
     public void save(@RequestBody NewSpareParts newSpareParts){
         newSparePartsService.save(newSpareParts);
     }
 
-    @RequestMapping("/delete")
-    public void delete(@RequestBody NewSpareParts newSpareParts){
+    @DeleteMapping
+    public void delete(@RequestParam("id") Long id){
+        NewSpareParts newSpareParts = newSparePartsService.getById(id);
         newSparePartsService.delete(newSpareParts);
     }
 
-    @RequestMapping("/update")
-    public NewSpareParts update(@RequestBody NewSpareParts newSpareParts){
-        return newSparePartsService.update(newSpareParts);
+    @PutMapping
+    public void update(@RequestBody NewSpareParts newSpareParts){
+        newSparePartsService.save(newSpareParts);
     }
 
-    @GetMapping("/getById")
+    @GetMapping
     public NewSpareParts getById(@RequestParam("id") Long id){
         return newSparePartsService.getById(id);
     }

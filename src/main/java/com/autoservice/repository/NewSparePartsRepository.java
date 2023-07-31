@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface NewSparePartsRepository extends JpaRepository<NewSpareParts,Long> {
     NewSpareParts getById(Long id);
     NewSpareParts getByNameOfProduct(String nameOfProduct);
-
-    NewSpareParts update(NewSpareParts newSpareParts);
 }

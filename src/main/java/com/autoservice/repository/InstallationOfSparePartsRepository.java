@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface InstallationOfSparePartsRepository extends JpaRepository<InstallationOfSpareParts,Long> {
     InstallationOfSpareParts getById(Long id);
-
-    InstallationOfSpareParts update(InstallationOfSpareParts installationOfSpareParts);
 }
